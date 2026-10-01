@@ -1,0 +1,835 @@
+.pagina {
+  position: relative;
+  /* cria contexto de empilhamento próprio: a camada de bolhas (z-index:-1)
+     fica atrás do conteúdo mas ainda na frente do fundo da página */
+  isolation: isolate;
+  overflow-x: clip;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 8%,
+    var(--admin-fundo-3) 16%
+  );
+  color: var(--admin-texto);
+}
+
+.halo {
+  position: absolute;
+  top: -180px;
+  left: 12%;
+  width: 104%;
+  height: 780px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(180, 190, 255, 0.36) 0%,
+    rgba(210, 200, 255, 0.2) 30%,
+    rgba(255, 210, 230, 0.13) 55%,
+    transparent 78%
+  );
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* NAV */
+
+.nav {
+  position: sticky;
+  top: 24px;
+  z-index: 10;
+  margin: 40px 60px 0;
+  border-radius: 999px;
+}
+
+.nav > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 14px 20px;
+}
+
+.navMarca {
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  flex-shrink: 0;
+}
+
+.navLinks {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.navLinks a {
+  color: var(--admin-texto);
+  text-decoration: none;
+}
+
+.navCta {
+  background: linear-gradient(177deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  padding: 15px 24px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+/* HERO */
+
+.hero {
+  position: relative;
+  padding: 76px 60px 0;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 34px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio);
+  margin: 0 0 32px;
+  flex-wrap: wrap;
+}
+
+/* Só o enquadramento da faixa — a tipografia e o glitch do wordmark vivem
+   no componente GlitchWordmark. */
+.wordmarkFaixa {
+  width: 100%;
+  overflow: hidden;
+  height: clamp(52px, 12.5vw, 168px);
+  margin: 4px 0 4px;
+}
+
+.heroGrade {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  margin-top: 28px;
+}
+
+.heroTexto {
+  flex: 3 1 420px;
+  min-width: 0;
+  max-width: 720px;
+}
+
+.h1 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 52px;
+  line-height: 1.04;
+  letter-spacing: -1.4px;
+  margin: 0 0 24px;
+}
+
+.subheadline {
+  font-size: 18px;
+  line-height: 1.56;
+  color: var(--admin-apoio);
+  margin: 0 0 32px;
+  max-width: 640px;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimario {
+  background: linear-gradient(177deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  padding: 20px 34px;
+  border-radius: 999px;
+}
+
+.ctaSecundario {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.25px solid rgba(255, 255, 255, 0.95);
+  color: var(--admin-texto);
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  padding: 20px 34px;
+  border-radius: 999px;
+}
+
+.trust {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  color: var(--admin-apoio);
+}
+
+.introColuna {
+  flex: 2 1 320px;
+  min-width: 0;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -64px;
+}
+
+.introCard {
+  width: 340px;
+  max-width: 100%;
+  border-radius: 24px;
+}
+
+.introTexto {
+  display: block;
+  padding: 26px 28px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.eixos {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 44px 0 0;
+}
+
+.eixoPill {
+  border: 1.25px solid rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  padding: 10px 20px;
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  color: var(--admin-texto);
+}
+
+/* CAPA */
+
+.capa {
+  position: relative;
+  margin: 100px 60px 0;
+  border-radius: 36px;
+}
+
+.capaConteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 46px 56px;
+}
+
+.capaTexto {
+  flex: 1;
+  min-width: 0;
+  max-width: 700px;
+}
+
+.capaRotulo {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+  margin: 0 0 12px;
+}
+
+.capaTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1;
+  letter-spacing: -1.2px;
+  margin: 0 0 20px;
+}
+
+.capaCorpo {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0 0 20px;
+  max-width: 560px;
+}
+
+.capaJustificativa {
+  display: inline-flex;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  padding: 10px 16px;
+  font-size: 12px;
+  color: var(--admin-apoio);
+}
+
+.capaJustificativa span:first-child {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--admin-texto);
+}
+
+.capaImagem {
+  width: 300px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 20px 30px rgba(77, 82, 102, 0.25));
+}
+
+/* VALORES */
+
+.valores {
+  display: flex;
+  gap: 20px;
+  margin: 60px 60px 0;
+}
+
+.valorCard {
+  flex: 1;
+  min-width: 0;
+  border-radius: 30px;
+}
+
+.valorCard > div {
+  padding: 32px 34px;
+}
+
+.valorRotulo {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+  margin: 0 0 16px;
+}
+
+.valorTitulo {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0 0 12px;
+}
+
+.valorTexto {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0 0 20px;
+}
+
+.valorLink {
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: var(--admin-texto);
+  text-decoration: none;
+}
+
+/* SEÇÕES GENÉRICAS */
+
+.secao {
+  padding: 110px 60px 0;
+}
+
+.h2 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -1px;
+  margin: 0 0 14px;
+}
+
+.secaoSublinha {
+  font-size: 16px;
+  color: var(--admin-apoio);
+  margin: 0 0 40px;
+  max-width: 720px;
+}
+
+/* COMO FUNCIONA */
+
+.passos {
+  display: flex;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.passo {
+  flex: 1;
+  min-width: 0;
+}
+
+.passoNumero {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 30px;
+  color: #c7cbd6;
+  margin: 0 0 12px;
+}
+
+.passoTitulo {
+  font-size: 19px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.passoTexto {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0;
+  max-width: 340px;
+}
+
+/* NESTA EDIÇÃO */
+
+.artigos {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.artigoCard {
+  flex: 1;
+  min-width: 0;
+  border-radius: 30px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.artigoCard > div {
+  padding: 20px;
+}
+
+.artigoFoto {
+  height: 200px;
+  border-radius: 18px;
+  background: #e5e6ea;
+  border: 1.25px solid rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  overflow: hidden;
+}
+
+.artigoFoto span {
+  color: #6b7080;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.artigoFoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artigoEditoria {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio);
+  margin: 0 0 8px;
+  padding: 0 4px;
+}
+
+.artigoTitulo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  margin: 0 0 10px;
+  padding: 0 4px;
+}
+
+.artigoChamada {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0 0 14px;
+  padding: 0 4px;
+}
+
+.artigoByline {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio);
+  padding: 0 4px;
+}
+
+/* REDAÇÃO */
+
+.equipe {
+  display: flex;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.perfil {
+  flex: 1;
+  min-width: 0;
+}
+
+.retrato {
+  width: 88px;
+  height: 88px;
+  border-radius: 999px;
+  background: linear-gradient(160deg, #e9ebf1, #d6dae4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #6b7080;
+  margin-bottom: 20px;
+}
+
+.perfilNome {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.perfilCargo {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio-fraco);
+  margin: 0 0 12px;
+}
+
+.perfilBio {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.expedienteLink {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--admin-texto);
+  text-decoration: none;
+}
+
+/* PLANOS */
+
+.planos {
+  display: flex;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.planoCard {
+  flex: 1;
+  min-width: 0;
+  border-radius: 30px;
+}
+
+.planoDestaque {
+  border-color: rgba(11, 11, 14, 0.5);
+}
+
+.planoCard > div {
+  padding: 38px 40px;
+}
+
+.planoNome {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio);
+  margin: 0 0 16px;
+}
+
+.planoPreco {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.planoPreco span:first-child {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 44px;
+  letter-spacing: -1px;
+}
+
+.planoPreco span:last-child {
+  font-size: 16px;
+  color: var(--admin-apoio);
+}
+
+.planoLista {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.planoLista li {
+  font-size: 14px;
+  color: var(--admin-apoio);
+}
+
+.planoBotao {
+  background: linear-gradient(178deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 17px 24px;
+  border-radius: 999px;
+}
+
+/* FAQ */
+
+.faq {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqItem {
+  padding: 26px 0;
+  border-bottom: 1px solid rgba(11, 11, 14, 0.1);
+}
+
+.faqPergunta {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.faqResposta {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0;
+  max-width: 900px;
+}
+
+/* NEWSLETTER */
+
+.newsletter {
+  margin: 110px 60px 0;
+  border-radius: 36px;
+}
+
+.newsletterConteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 50px 56px;
+  flex-wrap: wrap;
+}
+
+.newsletterTexto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.newsletterRotulo {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio);
+  margin: 0 0 12px;
+}
+
+.newsletterTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  margin: 0 0 14px;
+}
+
+.newsletterCorpo {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.newsletterForm {
+  flex: 1;
+  min-width: 320px;
+  max-width: 520px;
+}
+
+.newsletterCampo {
+  display: flex;
+  gap: 12px;
+}
+
+.newsletterCampo input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(255, 255, 255, 0.74);
+  border: 1.25px solid rgba(255, 255, 255, 0.95);
+  border-radius: 999px;
+  padding: 18px 22px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  color: var(--admin-texto);
+  outline: none;
+}
+
+.newsletterCampo button {
+  background: linear-gradient(178deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+  padding: 0 26px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.newsletterTermos {
+  font-size: 12px;
+  color: var(--admin-apoio);
+  margin: 12px 0 0;
+}
+
+.newsletterSucesso {
+  flex: 1;
+  min-width: 320px;
+  font-size: 15px;
+  color: var(--admin-texto);
+  font-weight: 700;
+}
+
+/* RODAPÉ */
+
+.rodape {
+  margin: 110px 60px 48px;
+  padding: 52px 56px 40px;
+  border-radius: 36px;
+  background: linear-gradient(173deg, #121217 8%, #3d4254 85%);
+  box-shadow: 0px 20px 48px 0px rgba(51, 56, 77, 0.28);
+  color: #b8bdcc;
+}
+
+.rodapeTopo {
+  display: flex;
+  gap: 40px;
+  padding-bottom: 44px;
+  flex-wrap: wrap;
+}
+
+.rodapeMarca {
+  flex: 2;
+  min-width: 260px;
+  max-width: 400px;
+}
+
+.rodapeMarcaTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  color: white;
+  margin: 0 0 12px;
+}
+
+.rodapeMarcaTexto {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #b8bdcc;
+  margin: 0;
+}
+
+.rodapeSeoLink {
+  display: inline-block;
+  margin-top: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.rodapeColuna {
+  flex: 1;
+  min-width: 140px;
+}
+
+.rodapeColunaTitulo {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio-fraco);
+  margin: 0 0 18px;
+}
+
+.rodapeLink {
+  font-size: 14px;
+  color: #b8bdcc;
+  margin: 0 0 14px;
+}
+
+.rodapeLinha {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.rodapeBase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: var(--admin-apoio-fraco);
+  font-size: 12px;
+}
+
+.rodapeSocial {
+  display: flex;
+  gap: 20px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #b8bdcc;
+}
+
+/* ------------------------------------------------------------------
+   Responsivo — a página foi construída com flex-wrap, então a maior
+   parte reflui sozinha. Aqui só ajustamos o que ainda estoura ou fica
+   apertado no mobile: a nav, os paddings largos e o H1 fixo.
+   ------------------------------------------------------------------ */
+@media (max-width: 860px) {
+  .nav {
+    margin: 20px 16px 0;
+  }
+  .nav > div {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .navLinks {
+    display: none;
+  }
+  .hero {
+    padding: 48px 20px 0;
+  }
+  .secao {
+    padding: 56px 20px 0;
+  }
+  .capaConteudo,
+  .newsletterConteudo {
+    padding: 32px 24px;
+  }
+  .rodape {
+    padding: 40px 20px 32px;
+  }
+  .h1 {
+    font-size: clamp(30px, 8vw, 52px);
+    letter-spacing: -0.8px;
+  }
+  .h2 {
+    font-size: clamp(24px, 6vw, 38px);
+  }
+  .capaImagem {
+    width: 100%;
+    height: auto;
+  }
+}

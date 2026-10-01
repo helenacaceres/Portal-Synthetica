@@ -1,0 +1,126 @@
+/* curva-base do componente: expo-out. Sai rápido, assenta devagar. */
+.painel {
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  max-width: 560px;
+  border: 1.25px solid rgba(11, 11, 14, 0.12);
+  border-radius: 20px;
+  background: #fff;
+  padding: 8px;
+  box-shadow: 0 14px 34px rgba(77, 82, 102, 0.1);
+}
+
+/* ---------- ABAS ---------- */
+
+.abas {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--admin-fundo-2);
+  border-radius: 13px;
+  padding: 4px;
+}
+
+.indicador {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(11, 11, 14, 0.1);
+  transition: transform 0.42s var(--ease);
+}
+
+.aba {
+  position: relative;
+  z-index: 1;
+  padding: 12px 10px;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  color: var(--admin-apoio-fraco);
+  transition: color 0.32s var(--ease), transform 0.12s ease-out;
+}
+
+.abaAtiva {
+  color: var(--admin-texto);
+  font-weight: 700;
+}
+
+.abaPress {
+  transform: scale(0.97);
+}
+
+/* ---------- CONTEÚDO (stagger na entrada) ---------- */
+
+.conteudo {
+  padding: 26px 22px 22px;
+}
+
+.conteudo > * {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: entrar 0.5s var(--ease) forwards;
+}
+
+.eyebrow {
+  animation-delay: 0.02s;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--admin-apoio-fraco);
+  margin: 0 0 10px;
+}
+
+.titulo {
+  animation-delay: 0.07s;
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.4px;
+  color: var(--admin-texto);
+  margin: 0 0 10px;
+}
+
+.texto {
+  animation-delay: 0.12s;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--admin-apoio);
+  margin: 0 0 16px;
+}
+
+.tags {
+  animation-delay: 0.17s;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tags li {
+  font-size: 10px;
+  letter-spacing: 0.8px;
+  color: var(--admin-apoio);
+  border: 1px solid rgba(11, 11, 14, 0.14);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+@keyframes entrar {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indicador,
+  .aba {
+    transition-duration: 0.001s;
+  }
+  .conteudo > * {
+    animation: entrar 0.001s linear forwards;
+  }
+}

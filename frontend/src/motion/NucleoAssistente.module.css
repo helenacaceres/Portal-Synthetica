@@ -1,0 +1,178 @@
+.nucleo {
+  --magenta: #f2338c;
+  --ciano: #1accf2;
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.nucleo > span {
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* ---- camadas ---- */
+
+.halo {
+  inset: -18%;
+  background: radial-gradient(
+    circle at 42% 38%,
+    rgba(242, 51, 140, 0.35),
+    rgba(26, 204, 242, 0.22) 45%,
+    transparent 72%
+  );
+  filter: blur(6px);
+  z-index: 0;
+}
+
+.pulso {
+  inset: 8%;
+  border: 2px solid var(--magenta);
+  opacity: 0;
+  z-index: 1;
+}
+
+.anel {
+  inset: 4%;
+  background: conic-gradient(
+    from 0deg,
+    var(--magenta),
+    var(--ciano),
+    var(--magenta)
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 7px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 7px), #000 calc(100% - 7px));
+  z-index: 2;
+}
+
+.anelInterno {
+  inset: 20%;
+  background: conic-gradient(
+    from 120deg,
+    transparent 0deg,
+    var(--ciano) 90deg,
+    transparent 200deg
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
+  z-index: 3;
+}
+
+.miolo {
+  inset: 28%;
+  background: radial-gradient(circle at 38% 34%, #3a4062, #0b0b0e 70%);
+  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.14),
+    0 6px 18px rgba(11, 11, 14, 0.28);
+  z-index: 4;
+}
+
+/* =====================================================================
+   ESTADO 1 — IDLE: respiração lenta, tudo calmo
+   ===================================================================== */
+
+.idle .miolo {
+  animation: respirar 3.6s ease-in-out infinite;
+}
+.idle .halo {
+  animation: haloRespira 3.6s ease-in-out infinite;
+}
+.idle .anel {
+  animation: girar 24s linear infinite; /* deriva quase imperceptível */
+  opacity: 0.55;
+}
+.idle .anelInterno {
+  animation: girar 18s linear infinite reverse;
+  opacity: 0.4;
+}
+
+@keyframes respirar {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes haloRespira {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.04); }
+}
+
+/* =====================================================================
+   ESTADO 2 — PROCESSANDO: pulso curto e nervoso + anel girando
+   ===================================================================== */
+
+.processando .miolo {
+  animation: bater 0.85s ease-in-out infinite;
+}
+.processando .halo {
+  animation: haloBate 0.85s ease-in-out infinite;
+}
+.processando .anel {
+  animation: girar 1.1s linear infinite; /* LINEAR de propósito = "trabalhando" */
+  opacity: 1;
+}
+.processando .anelInterno {
+  animation: girar 1.7s linear infinite reverse;
+  opacity: 0.85;
+}
+
+@keyframes bater {
+  0%, 100% { transform: scale(0.92); }
+  50% { transform: scale(1); }
+}
+@keyframes haloBate {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+/* =====================================================================
+   ESTADO 3 — RESPONDENDO: um gesto só — contrai, expande, assenta,
+   e um pulso se propaga pra fora
+   ===================================================================== */
+
+.respondendo .miolo {
+  animation: responder 0.62s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+.respondendo .halo {
+  animation: haloFlare 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.respondendo .anel {
+  opacity: 0.7;
+}
+.respondendo .anelInterno {
+  opacity: 0.5;
+}
+.respondendo .pulso {
+  animation: propagar 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes responder {
+  0% { transform: scale(1); }
+  18% { transform: scale(0.88); }   /* anticipation */
+  55% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+@keyframes haloFlare {
+  0% { opacity: 0.4; transform: scale(1); }
+  40% { opacity: 0.9; transform: scale(1.18); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+@keyframes propagar {
+  0% { opacity: 0.7; transform: scale(0.6); }
+  100% { opacity: 0; transform: scale(1.5); }
+}
+
+@keyframes girar {
+  to { transform: rotate(360deg); }
+}
+
+/* =====================================================================
+   Acessibilidade — sem movimento contínuo; estados viram só variação
+   de opacidade
+   ===================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .nucleo > span {
+    animation: none !important;
+  }
+  .processando .halo { opacity: 0.7; }
+  .respondendo .halo { opacity: 0.9; }
+  .respondendo .miolo { transform: scale(1.1); }
+}

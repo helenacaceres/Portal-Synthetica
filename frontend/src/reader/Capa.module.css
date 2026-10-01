@@ -1,0 +1,200 @@
+.pagina {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #0b0b0e;
+  color: var(--admin-texto);
+}
+
+/* Página "por baixo" — só aparece na fresta enquanto a folha abre. */
+.verso {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 48px 64px;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-apoio);
+  font-size: 11px;
+  letter-spacing: 1.4px;
+}
+
+.versoNota {
+  font-style: italic;
+  letter-spacing: 0;
+  opacity: 0.6;
+}
+
+.folha {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  transform-origin: left center;
+  will-change: transform;
+  background: radial-gradient(120% 80% at 15% 0%, #23232c 0%, #14141a 55%, #0b0b0e 100%);
+  box-shadow: 40px 0 80px -20px rgba(0, 0, 0, 0.55);
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.folha:active {
+  cursor: grabbing;
+}
+
+.folhaSolta {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.folhaAbrindo {
+  transition: transform 0.55s ease-in, opacity 0.55s ease-in;
+  transform: translateX(-118%) rotateZ(-6deg) !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.folhaConteudo {
+  position: relative;
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 64px 44px;
+  display: flex;
+  flex-direction: column;
+  color: #f4f3f1;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  padding-bottom: 16px;
+}
+
+.selo {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #9499a8;
+}
+
+.edicao {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: #f2338c;
+}
+
+/* Bloco central — tudo junto, centralizado na vertical. */
+.centro {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 22px;
+}
+
+.wordmark {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 13vw, 168px);
+  line-height: 0.84;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: #f4f3f1;
+}
+
+.subtitulo {
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  color: #9499a8;
+  margin: 0;
+}
+
+.manchete {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 620px;
+  margin-top: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: none;
+  color: #f4f3f1;
+  transition: color 0.2s ease;
+}
+
+.manchete:hover {
+  color: #1accf2;
+}
+
+.mancheteRotulo {
+  font-size: 9px;
+  letter-spacing: 1.6px;
+  color: #9499a8;
+}
+
+.mancheteTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.8vw, 30px);
+  line-height: 1.14;
+  letter-spacing: -0.01em;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.abrir {
+  background: #f4f3f1;
+  color: #0b0b0e;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+  padding: 16px 30px;
+  border-radius: 999px;
+  transition: transform 0.2s ease;
+}
+
+.abrir:hover {
+  transform: translateX(4px);
+}
+
+.dica {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: #6b7387;
+}
+
+@media (max-width: 720px) {
+  .folhaConteudo {
+    padding: 32px 24px 36px;
+  }
+  .cabecalho {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .folhaSolta,
+  .folhaAbrindo {
+    transition: none;
+  }
+}

@@ -1,0 +1,155 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.titulo {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+.subtitulo {
+  color: var(--admin-apoio);
+  font-size: 15px;
+  margin: 0;
+}
+
+.alertas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.alerta {
+  height: 196px;
+}
+
+.alertaDestacado {
+  border-color: var(--admin-texto);
+  border-width: 1.5px;
+}
+
+.alertaConteudo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 26px 28px 24px;
+}
+
+.alertaNumero {
+  font-weight: 900;
+  font-size: 42px;
+  letter-spacing: -1.4px;
+  margin: 0;
+}
+
+.alertaTitulo {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: -0.3px;
+  margin: 0;
+}
+
+.alertaDescricao {
+  color: var(--admin-apoio);
+  font-size: 13px;
+  margin: 0;
+  flex: 1;
+}
+
+.alertaAcao {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--admin-texto);
+  text-decoration: none;
+}
+
+.linhaInferior {
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.progresso,
+.atividade {
+  padding: 0;
+}
+
+.progresso > div,
+.atividade > div {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rotulo {
+  color: var(--admin-apoio);
+  font-size: 10px;
+  letter-spacing: 1.6px;
+}
+
+.barraProgresso {
+  display: flex;
+  height: 14px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.segmentoPublicado {
+  background: linear-gradient(178deg, #121217 8%, #3d4254 85%);
+}
+
+.segmentoRascunho {
+  background: #9ea6b8;
+}
+
+.segmentoFaltando {
+  background: rgba(11, 11, 14, 0.1);
+}
+
+.legenda {
+  display: flex;
+  gap: 26px;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+}
+
+.nota {
+  color: var(--admin-apoio);
+  font-size: 13px;
+  margin: 0;
+}
+
+.evento {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.eventoQuando {
+  color: var(--admin-apoio-fraco);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.eventoTexto {
+  color: var(--admin-apoio);
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .alertas {
+    grid-template-columns: 1fr;
+  }
+  .linhaInferior {
+    grid-template-columns: 1fr;
+  }
+}

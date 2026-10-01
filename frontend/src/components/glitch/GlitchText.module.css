@@ -1,0 +1,107 @@
+.raiz {
+  position: relative;
+  display: inline-block;
+}
+
+.camadaBase {
+  position: relative;
+  z-index: 1;
+}
+
+.camadaFantasma {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  color: inherit;
+  opacity: 0;
+  pointer-events: none;
+  clip-path: inset(50% 0 50% 0);
+}
+
+.varredura {
+  position: absolute;
+  left: -2%;
+  right: -2%;
+  top: 48%;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.ativo .camadaBase {
+  animation: glitch-base 320ms steps(2, end);
+}
+
+.ativo .camadaFantasma {
+  animation: glitch-fantasma 320ms steps(2, end);
+}
+
+.ativo .varredura {
+  animation: glitch-varredura 320ms ease-out;
+}
+
+@keyframes glitch-base {
+  0%,
+  100% {
+    transform: translateX(0);
+    text-shadow: none;
+  }
+  25% {
+    transform: translateX(calc(-1.5px * var(--glitch-intensidade, 1)));
+  }
+  44% {
+    transform: translateX(calc(2px * var(--glitch-intensidade, 1)));
+    text-shadow: calc(0.6px * var(--glitch-intensidade, 1)) 0 rgba(242, 51, 140, 0.3),
+      calc(-0.6px * var(--glitch-intensidade, 1)) 0 rgba(26, 204, 242, 0.3);
+  }
+  69% {
+    transform: translateX(calc(-1px * var(--glitch-intensidade, 1)));
+    text-shadow: none;
+  }
+}
+
+@keyframes glitch-fantasma {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translate(0, 0);
+    clip-path: inset(50% 0 50% 0);
+  }
+  38% {
+    opacity: 0.4;
+    transform: translate(calc(2.5px * var(--glitch-intensidade, 1)), calc(-1px * var(--glitch-intensidade, 1)));
+    clip-path: inset(22% 0 56% 0);
+  }
+  62% {
+    opacity: 0.3;
+    transform: translate(calc(-2px * var(--glitch-intensidade, 1)), calc(1px * var(--glitch-intensidade, 1)));
+    clip-path: inset(58% 0 14% 0);
+  }
+}
+
+@keyframes glitch-varredura {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  40% {
+    opacity: 0.5;
+    transform: scaleX(1);
+  }
+  68% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ativo .camadaBase,
+  .ativo .camadaFantasma,
+  .ativo .varredura {
+    animation: none !important;
+  }
+}

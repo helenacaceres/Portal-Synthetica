@@ -1,0 +1,150 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 72px 24px;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-texto);
+}
+
+.marca {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+}
+
+.cupom {
+  border-style: dashed;
+  width: 560px;
+  max-width: calc(100vw - 40px);
+  border-radius: 22px;
+}
+
+.cupom > div {
+  padding: 40px 48px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.selo {
+  align-self: flex-start;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  padding: 7px 14px;
+}
+
+.selo p {
+  color: var(--admin-apoio);
+  font-weight: 700;
+  font-size: 13px;
+  margin: 0;
+}
+
+.titulo {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.descricao {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.linha {
+  height: 1px;
+  background: #6b7387;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo > span {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  color: var(--admin-apoio);
+}
+
+.campo input {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 60px;
+  padding: 14px 16px;
+  font-family: "Archivo", sans-serif;
+  font-size: 14px;
+  color: var(--admin-texto);
+  background: white;
+  outline: none;
+}
+
+.campo input:focus {
+  border-color: #6b7387;
+}
+
+.erro {
+  color: var(--admin-sinal-texto);
+  font-size: 13px;
+  margin: 0;
+}
+
+.botao {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 20px 22px;
+  border-radius: 22px;
+  text-align: center;
+}
+
+.botao:disabled {
+  opacity: 0.6;
+}
+
+.rodape {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  color: var(--admin-apoio);
+}
+
+.linkEntrar {
+  background: none;
+  color: var(--admin-texto);
+  text-decoration: underline;
+  font-family: "Space Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+}
+
+@media (max-width: 620px) {
+  .pagina {
+    padding: 48px 16px;
+  }
+  .cupom {
+    width: 100%;
+    max-width: 100%;
+  }
+  .cupom > div {
+    padding: 32px 24px 28px;
+  }
+}

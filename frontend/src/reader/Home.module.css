@@ -1,0 +1,396 @@
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-texto);
+}
+
+/* TopBar */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 0 32px;
+  background: var(--admin-fundo-1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logoBadge {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoBadge img {
+  width: 16px;
+  height: 16px;
+}
+
+.marca p {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  line-height: 12px;
+  text-align: left;
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+}
+
+.navDireita {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.nav button,
+.navDireita button {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  font-family: "Archivo", sans-serif;
+  color: var(--admin-texto);
+  white-space: nowrap;
+}
+
+.nav button:hover,
+.navDireita button:hover {
+  color: var(--admin-apoio);
+}
+
+/* Corpo */
+
+.corpo {
+  flex: 1;
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 32px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cabecalho {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.meta {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.proporcao {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.proporcaoBarra {
+  display: flex;
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.proporcaoBarra > span:first-child {
+  background: linear-gradient(90deg, #1a1a21 0%, #52576b 100%);
+}
+
+.proporcaoBarra > span:last-child {
+  background: rgba(11, 11, 14, 0.14);
+}
+
+.proporcaoLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+}
+
+/* Herói — matéria de capa */
+
+.hero {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 30px;
+}
+
+.heroConteudo {
+  display: flex;
+  gap: 36px;
+  padding: 36px 40px;
+  align-items: stretch;
+}
+
+.heroTextos {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.heroRotulo {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.heroTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.heroOlho {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.4;
+  color: var(--admin-apoio);
+  margin: 0;
+  max-width: 46ch;
+}
+
+.heroAutoria {
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio-fraco);
+  margin: 4px 0 0;
+}
+
+.heroLer {
+  margin-top: auto;
+  font-size: 11px;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+}
+
+.hero:hover .heroLer {
+  color: var(--admin-sinal-texto);
+}
+
+.heroMedia {
+  position: relative;
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* estático de propósito — sem animação contínua numa tela de navegação. */
+.heroGradiente {
+  height: 100%;
+  min-height: 220px;
+  background: linear-gradient(120deg, #ffe99e, #8178ff, #ff009c);
+}
+
+.heroMedia img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+}
+
+.heroFig {
+  position: absolute;
+  left: 12px;
+  bottom: 10px;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Lista do sumário */
+
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aviso {
+  color: var(--admin-apoio);
+  font-size: 13px;
+  padding: 8px 2px;
+}
+
+.estado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 32px 4px;
+  color: var(--admin-apoio);
+  font-size: 14px;
+}
+
+.tentarNovamente {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 11, 14, 0.16);
+  color: var(--admin-texto);
+}
+
+.item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  border-radius: 22px;
+}
+
+.itemConteudo {
+  display: grid;
+  grid-template-columns: 190px 1fr auto;
+  align-items: baseline;
+  column-gap: 20px;
+  row-gap: 4px;
+  padding: 18px 24px;
+}
+
+.itemMeta {
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+}
+
+.itemTitulo {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+}
+
+.itemTempo {
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio-fraco);
+  white-space: nowrap;
+}
+
+.itemOlho {
+  grid-column: 2 / 3;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--admin-apoio);
+}
+
+.item:hover .itemTitulo {
+  color: var(--admin-sinal-texto);
+}
+
+/* Rodapé com código de barras */
+
+.rodape {
+  margin-top: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.barras {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 32px;
+}
+
+.barras span {
+  display: block;
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  border-radius: 999px;
+}
+
+.rodape p {
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  margin: 0;
+  color: var(--admin-apoio);
+}
+
+@media (max-width: 860px) {
+  .nav {
+    display: none;
+  }
+  .topbar {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    padding: 12px 16px;
+  }
+  .navDireita {
+    gap: 14px;
+  }
+  .navDireita button {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+  }
+  .corpo {
+    padding: 28px 16px 56px;
+  }
+  .heroConteudo {
+    flex-direction: column;
+    gap: 20px;
+    padding: 28px 22px;
+  }
+  .heroMedia {
+    width: 100%;
+  }
+  .itemConteudo {
+    grid-template-columns: 1fr auto;
+  }
+  .itemMeta {
+    grid-column: 1 / -1;
+  }
+  .itemOlho {
+    grid-column: 1 / -1;
+  }
+}
+

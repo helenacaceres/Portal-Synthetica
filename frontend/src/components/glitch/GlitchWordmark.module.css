@@ -1,0 +1,157 @@
+.raiz {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.camada {
+  position: absolute;
+  inset: 0;
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 12.5vw, 168px);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  margin: 0;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.base {
+  color: var(--admin-texto);
+}
+
+.magenta {
+  color: #f2338c;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  transform: translate(5px, -3px);
+}
+
+.ciano {
+  color: #1accf2;
+  mix-blend-mode: multiply;
+  opacity: 0.6;
+  transform: translate(-5px, 3px);
+}
+
+.linha1,
+.linha2 {
+  position: absolute;
+  left: -1%;
+  right: -1%;
+  height: 2px;
+  background: var(--admin-texto);
+  opacity: 0;
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.linha1 {
+  top: 38%;
+}
+
+.linha2 {
+  top: 64%;
+}
+
+/* Sequência: 0ms normal → ~80ms pequena distorção → ~140ms deslocamento →
+   ~220ms interferência cromática → ~320ms volta ao normal. steps() em vez
+   de easing suave — uma falha de sinal não desacelera, ela "pula". */
+
+.ativo .base {
+  animation: wm-base 340ms steps(3, end);
+}
+
+.ativo .magenta {
+  animation: wm-magenta 340ms steps(3, end);
+}
+
+.ativo .ciano {
+  animation: wm-ciano 340ms steps(3, end);
+}
+
+.ativo .linha1 {
+  animation: wm-linha 340ms ease-out;
+}
+
+.ativo .linha2 {
+  animation: wm-linha 340ms ease-out 40ms;
+}
+
+@keyframes wm-base {
+  0%,
+  100% {
+    transform: translate(0, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  24% {
+    clip-path: inset(44% 0 32% 0);
+  }
+  41% {
+    transform: translate(2px, 0);
+    clip-path: inset(0 0 0 0);
+  }
+  65% {
+    transform: translate(-1px, 0);
+  }
+}
+
+@keyframes wm-magenta {
+  0%,
+  100% {
+    transform: translate(5px, -3px);
+    opacity: 0.6;
+  }
+  41% {
+    transform: translate(9px, -4px);
+    opacity: 0.8;
+  }
+  65% {
+    transform: translate(4px, -2px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes wm-ciano {
+  0%,
+  100% {
+    transform: translate(-5px, 3px);
+    opacity: 0.6;
+  }
+  41% {
+    transform: translate(-9px, 4px);
+    opacity: 0.8;
+  }
+  65% {
+    transform: translate(-4px, 2px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes wm-linha {
+  0%,
+  100% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  24% {
+    opacity: 0.55;
+    transform: scaleX(1);
+  }
+  47% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ativo .base,
+  .ativo .magenta,
+  .ativo .ciano,
+  .ativo .linha1,
+  .ativo .linha2 {
+    animation: none !important;
+  }
+}

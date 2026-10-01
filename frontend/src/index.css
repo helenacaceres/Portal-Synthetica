@@ -1,0 +1,77 @@
+:root {
+  /* Tom "papel" usado como fundo neutro em telas fora do visual glass. */
+  --papel: #f2efe9;
+
+  /* Admin (visual "glass" — dashboard, conteúdos, cartas) */
+  --admin-fundo-1: #fcfbfa;
+  --admin-fundo-2: #f4f3f1;
+  --admin-fundo-3: #f8f7f5;
+  --admin-texto: #0b0b0e;
+  --admin-apoio: #595e70;
+  --admin-apoio-fraco: #9499a8;
+  --admin-apoio-forte: #9ea6b8;
+  --admin-linha: rgba(255, 255, 255, 0.9);
+  --admin-sinal: #e8341c;
+  --admin-sinal-texto: #ce2a12;
+
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--admin-texto);
+  font-family: "Archivo", sans-serif;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Foco visível por teclado em qualquer elemento interativo — o reset de
+   button acima remove o outline nativo; sem isto a navegação por Tab fica
+   invisível. */
+:focus-visible {
+  /* currentColor se adapta: em UI clara o contorno fica escuro, em seções
+     escuras (capa, hero) fica claro — visível nos dois casos. */
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.mono {
+  font-family: "Space Mono", monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,87 @@
+.controle {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.rotulos {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.trilho {
+  position: relative;
+  display: flex;
+  height: 84px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  margin-top: 12px;
+}
+
+.trilho:active {
+  cursor: grabbing;
+}
+
+.trilho:focus-visible {
+  outline: 2px solid var(--admin-texto);
+  outline-offset: 3px;
+}
+
+.segmentoEsquerda,
+.segmentoDireita {
+  height: 100%;
+}
+
+.segmentoEsquerda {
+  background: #1a1a21;
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.segmentoDireita {
+  background: #6b7387;
+}
+
+.divisoria {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 10px;
+  padding: 6px 9px;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--admin-texto);
+  pointer-events: none;
+}
+
+.legenda {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+}
+
+.numeroAtivo {
+  color: var(--admin-texto);
+  margin: 0;
+}
+
+.numeroInativo {
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.nota {
+  font-style: italic;
+  font-size: 12px;
+  color: var(--admin-apoio);
+  margin: 0;
+}

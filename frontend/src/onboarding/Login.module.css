@@ -1,0 +1,213 @@
+.pagina {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-texto);
+}
+
+.halo {
+  position: absolute;
+  top: -140px;
+  left: 5%;
+  width: 90%;
+  max-width: 1300px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.cromado {
+  position: absolute;
+  top: 4%;
+  right: -6%;
+  width: 46%;
+  max-width: 620px;
+  transform: rotate(9deg);
+  pointer-events: none;
+}
+
+.gota1 {
+  position: absolute;
+  top: 140px;
+  right: 8%;
+  width: 90px;
+}
+
+.gota2 {
+  position: absolute;
+  top: 65%;
+  right: 6%;
+  width: 70px;
+}
+
+.gota3 {
+  position: absolute;
+  top: 18%;
+  left: 20%;
+  width: 50px;
+}
+
+.marca {
+  position: absolute;
+  left: 60px;
+  top: 48px;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  font-weight: 700;
+}
+
+.acesso {
+  position: absolute;
+  right: 60px;
+  top: 49px;
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+}
+
+.edicao {
+  position: absolute;
+  left: 60px;
+  bottom: 40px;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--admin-apoio);
+}
+
+.card {
+  position: relative;
+  margin: 132px auto 44px;
+  width: 520px;
+  max-width: calc(100vw - 40px);
+  border-radius: 36px;
+}
+
+.card > div {
+  padding: 48px 52px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.rotulo {
+  color: var(--admin-apoio);
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.titulo {
+  font-weight: 700;
+  font-size: 34px;
+  letter-spacing: -0.9px;
+  line-height: 1.04;
+  margin: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.campo > span {
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--admin-apoio);
+  font-weight: 700;
+  font-family: "Space Mono", monospace;
+}
+
+.campo input {
+  background: rgba(255, 255, 255, 0.74);
+  border: 1.25px solid rgba(255, 255, 255, 0.95);
+  border-radius: 22px;
+  padding: 18px 22px;
+  font-family: "Space Mono", monospace;
+  font-size: 13px;
+  color: var(--admin-texto);
+  outline: none;
+}
+
+.opcoes {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.opcoes > span:first-child {
+  color: var(--admin-apoio);
+}
+
+.esqueci {
+  font-weight: 700;
+  cursor: default;
+}
+
+.erro {
+  color: var(--admin-sinal-texto);
+  font-size: 13px;
+  margin: 0;
+}
+
+.botaoEntrar {
+  background: linear-gradient(177deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  padding: 20px;
+  border-radius: 22px;
+}
+
+.botaoEntrar:disabled {
+  opacity: 0.6;
+}
+
+.botaoGoogle {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1.25px solid rgba(255, 255, 255, 0.95);
+  color: var(--admin-texto);
+  font-size: 11px;
+  letter-spacing: 1.4px;
+  padding: 20px;
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+.rodapeCard {
+  text-align: center;
+  font-size: 13px;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.linkAssinar {
+  background: none;
+  color: var(--admin-texto);
+  font-weight: 700;
+  font-family: "Archivo", sans-serif;
+  font-size: 13px;
+}
+
+@media (max-width: 620px) {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .card > div {
+    padding: 36px 24px 32px;
+  }
+}

@@ -1,0 +1,179 @@
+.pagina {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, var(--admin-fundo-1), var(--admin-fundo-3));
+  color: var(--admin-texto);
+  padding: 72px 40px 96px;
+}
+
+.cabecalho {
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  color: var(--admin-apoio-fraco);
+  margin: 0 0 14px;
+}
+
+.h1 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 900;
+  font-size: 44px;
+  letter-spacing: -1.4px;
+  margin: 0 0 18px;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.intro code {
+  font-family: "Space Mono", monospace;
+  font-size: 12px;
+  background: rgba(11, 11, 14, 0.06);
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* ---------- SEÇÕES ---------- */
+
+.secao {
+  max-width: 900px;
+  margin: 0 auto 72px;
+}
+
+.secaoTitulo {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.num {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--admin-apoio-fraco);
+  padding-top: 4px;
+}
+
+.h2 {
+  font-family: "Archivo", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+}
+
+.desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--admin-apoio);
+  margin: 0;
+  max-width: 620px;
+}
+
+/* ---------- PALCOS ---------- */
+
+.palco {
+  display: flex;
+  justify-content: center;
+  padding: 36px;
+  border: 1.25px dashed rgba(11, 11, 14, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.palcoCards {
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.palcoNucleo {
+  display: grid;
+  place-items: center;
+  min-height: 240px;
+  border: 1.25px dashed rgba(11, 11, 14, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* ---------- CONTROLES ---------- */
+
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btn,
+.btnPrimario {
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1.25px solid rgba(11, 11, 14, 0.16);
+  color: var(--admin-apoio);
+  background: #fff;
+  transition: transform 0.12s ease-out, border-color 0.2s ease-out,
+    color 0.2s ease-out;
+}
+
+.btn:hover:not(:disabled),
+.btnPrimario:hover:not(:disabled) {
+  border-color: rgba(11, 11, 14, 0.4);
+  color: var(--admin-texto);
+}
+
+.btn:active:not(:disabled),
+.btnPrimario:active:not(:disabled) {
+  transform: scale(0.96);
+}
+
+.btnAtivo {
+  background: var(--admin-texto);
+  border-color: var(--admin-texto);
+  color: #fff;
+}
+
+.btnPrimario {
+  background: linear-gradient(178deg, #121217 8%, #3d4254 85%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.btn:disabled,
+.btnPrimario:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* ---------- RODAPÉ ---------- */
+
+.rodape {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 28px;
+  border-top: 1px solid rgba(11, 11, 14, 0.1);
+  font-size: 11px;
+  color: var(--admin-apoio-fraco);
+}
+
+.rodape code {
+  color: var(--admin-apoio);
+}
+
+@media (max-width: 560px) {
+  .pagina {
+    padding: 56px 20px 72px;
+  }
+  .h1 {
+    font-size: 34px;
+  }
+}

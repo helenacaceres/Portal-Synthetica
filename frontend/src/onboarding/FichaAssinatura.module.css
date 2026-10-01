@@ -1,0 +1,221 @@
+.grade {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tema {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: white;
+  color: var(--admin-texto);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 16px 18px;
+  border-radius: 70px;
+  width: 222px;
+}
+
+.temaAtivo {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+  border-radius: 22px;
+}
+
+.opcoesPerfil {
+  display: flex;
+  gap: 16px;
+}
+
+.opcaoPerfil {
+  flex: 1;
+  text-align: left;
+  border: 1.25px solid rgba(255, 255, 255, 0.9);
+  border-radius: 22px;
+  box-shadow: 0px 14px 34px 0px rgba(77, 82, 102, 0.14);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.opcaoPerfil p:first-child {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--admin-texto);
+}
+
+.opcaoPerfil p:last-child {
+  font-size: 12px;
+  color: var(--admin-apoio);
+  margin: 0;
+}
+
+.opcaoPerfilAtiva {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+}
+
+.opcaoPerfilAtiva p {
+  color: #f2efe9 !important;
+}
+
+.opcoesTempo {
+  display: flex;
+  gap: 12px;
+}
+
+.opcaoTempo {
+  width: 164px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: white;
+  text-align: left;
+}
+
+.opcaoTempoTitulo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+  color: var(--admin-texto);
+  margin: 0;
+}
+
+.opcaoTempoSub {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  color: var(--admin-apoio);
+}
+
+.opcaoTempoAtiva {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 22px;
+}
+
+.opcaoTempoAtiva .opcaoTempoTitulo,
+.opcaoTempoAtiva .opcaoTempoSub {
+  color: #f2efe9;
+}
+
+.notaTempo {
+  font-style: italic;
+  font-size: 12px;
+  color: var(--admin-apoio);
+  margin: 16px 0 0;
+}
+
+/* Tela de fechamento */
+
+.paginaFechamento {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 72px 24px;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-texto);
+  text-align: center;
+}
+
+.selo {
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  color: var(--admin-apoio);
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 14px;
+}
+
+.tituloFechamento {
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -0.8px;
+  margin: 0;
+}
+
+.sumario {
+  border: 1.25px solid rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  box-shadow: 0px 14px 34px 0px rgba(77, 82, 102, 0.14);
+  width: 788px;
+  max-width: calc(100vw - 40px);
+  padding: 8px 40px;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.linhaSumario {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  text-align: left;
+}
+
+.linhaSumario:last-child {
+  border-bottom: none;
+}
+
+.linhaSumarioTitulo {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.18px;
+  margin: 0;
+  flex: 1;
+}
+
+.paginaFraca {
+  color: var(--admin-apoio);
+}
+
+.linhaFantasma {
+  flex: 1;
+  height: 10px;
+  background: var(--admin-apoio);
+  opacity: 0.22;
+}
+
+.notaFinal {
+  font-size: 14px;
+  color: var(--admin-apoio);
+  max-width: 788px;
+  margin: 0;
+}
+
+.botaoContinuar {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 16px 22px;
+  border-radius: 22px;
+}
+
+@media (max-width: 640px) {
+  .tema {
+    width: 100%;
+  }
+  .opcoesPerfil {
+    flex-direction: column;
+  }
+  .opcaoPerfil {
+    padding: 40px 24px;
+    gap: 18px;
+  }
+  .tituloFechamento {
+    font-size: clamp(26px, 7vw, 42px);
+  }
+  .paginaFechamento {
+    padding: 40px 20px;
+  }
+}

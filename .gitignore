@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.local
+
+# configuracao local de ferramenta de desenvolvimento — nao e codigo do projeto
+.claude/
+
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/*.db
+**/__pycache__/
+
+.DS_Store

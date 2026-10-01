@@ -1,0 +1,338 @@
+.pagina {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo {
+  font-weight: 700;
+  font-size: 42px;
+  letter-spacing: -0.8px;
+  color: var(--admin-texto);
+  margin: 0 0 5px;
+}
+
+.subtitulo {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  color: var(--admin-apoio);
+}
+
+.botaoNovo {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 16px 20px;
+  border-radius: 22px;
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.busca {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  padding: 11px 14px;
+  width: 320px;
+  background: white;
+}
+
+.busca input {
+  border: none;
+  outline: none;
+  background: transparent;
+  width: 100%;
+  font-size: 14px;
+  color: var(--admin-apoio);
+}
+
+.busca input:focus {
+  color: var(--admin-texto);
+}
+
+.chip {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: white;
+  color: var(--admin-texto);
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  padding: 11px 15px;
+}
+
+.chipAtivo {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+  border-radius: 999px;
+}
+
+.linhaResultado {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: var(--admin-apoio);
+}
+
+.ordenar {
+  color: var(--admin-texto);
+  font-weight: 700;
+}
+
+.ordenar select {
+  font: inherit;
+  color: inherit;
+  font-weight: 700;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mensagemErro {
+  color: var(--admin-sinal-texto);
+  font-size: 13px;
+}
+
+.mensagemOk {
+  color: #1f7a4d;
+  font-size: 13px;
+}
+
+.separadorFiltro {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(11, 11, 14, 0.14);
+  margin: 4px 2px;
+}
+
+.barraSelecao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 52px;
+  padding: 11px 16px 11px 24px;
+  border-radius: 999px;
+  background: linear-gradient(179deg, #121217 8%, #3d4254 85%);
+  color: white;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+}
+
+.barraSelecao > p {
+  white-space: nowrap;
+}
+
+.acoesEmMassa {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.acoesEmMassa button {
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.acaoExcluirMassa {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px dashed rgba(255, 255, 255, 0.5) !important;
+}
+
+.tabela {
+  padding: 0;
+}
+
+.linhaCabecalho {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  color: var(--admin-apoio);
+}
+
+.linha {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.linha:last-child {
+  border-bottom: none;
+}
+
+.colCheckbox {
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.colId {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.colTitulo {
+  flex: 1;
+  min-width: 0;
+}
+
+.colEditoria {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.colStatus {
+  width: 110px;
+  flex-shrink: 0;
+}
+
+.colAtualizado {
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.colAcoes {
+  width: 150px;
+  flex-shrink: 0;
+  display: flex;
+  gap: 8px;
+}
+
+.textoApoio {
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  color: var(--admin-apoio);
+}
+
+.linkTitulo {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--admin-texto);
+  text-align: left;
+  padding: 0;
+}
+
+.selo {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  padding: 4px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+}
+
+.seloPublicado {
+  background: linear-gradient(180deg, #1a1a21 0%, #52576b 100%);
+  color: #f2efe9;
+}
+
+.seloRascunho {
+  background: transparent;
+  color: var(--admin-apoio);
+}
+
+.acaoEditar,
+.acaoExcluir {
+  font-size: 9px;
+  letter-spacing: 0.9px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.acaoEditar {
+  color: var(--admin-texto);
+}
+
+.acaoExcluir {
+  color: var(--admin-apoio);
+}
+
+.mensagem {
+  padding: 20px;
+  color: var(--admin-apoio);
+  font-size: 13px;
+}
+
+.paginacao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
+  letter-spacing: 1.3px;
+  color: var(--admin-apoio);
+}
+
+.paginas {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.paginas button {
+  min-width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 1.25px solid rgba(255, 255, 255, 0.9);
+  background: white;
+  color: var(--admin-texto);
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+}
+
+.paginas button:disabled {
+  opacity: 0.4;
+}
+
+.paginaAtiva {
+  background: linear-gradient(157deg, #121217 8%, #3d4254 85%) !important;
+  color: white !important;
+  border: none !important;
+}
+
+/* Admin é ferramenta de desktop, mas abaixo de ~800px a tabela de colunas
+   fixas estourava a viewport. Aqui as linhas quebram e as colunas menos
+   críticas (ID, data) ssomem. */
+@media (max-width: 800px) {
+  .pagina {
+    padding: 20px 16px;
+  }
+  .linhaCabecalho {
+    display: none;
+  }
+  .linha {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  .colId,
+  .colAtualizado {
+    display: none;
+  }
+  .colTitulo {
+    flex-basis: 100%;
+  }
+  .filtros {
+    flex-wrap: wrap;
+  }
+}

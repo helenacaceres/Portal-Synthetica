@@ -1,0 +1,18 @@
+/* Overlay na FRENTE do conteúdo do hero (pra poder refratar/cobrir o
+   wordmark real), mas atrás da nav e sem capturar clique. Fora dos blobs
+   o shader é totalmente transparente — a página aparece intocada. */
+.camada {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 5;
+  transition: opacity 0.4s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .camada {
+    transition: none;
+  }
+}

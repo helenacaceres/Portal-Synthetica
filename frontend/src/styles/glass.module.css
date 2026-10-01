@@ -1,0 +1,57 @@
+/* Padrão visual "vidro" repetido em todo o Admin: borda clara, blur, sombra
+   externa suave + brilho interno (inset). Compartilhado por cards, barra de
+   navegação e tabela. */
+
+.vidro {
+  position: relative;
+  border: 1.25px solid var(--admin-linha);
+  border-radius: 30px;
+  box-shadow: 0px 14px 34px 0px rgba(77, 82, 102, 0.14);
+  overflow: hidden;
+}
+
+.vidro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  background-image: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.8) 4%,
+    rgba(255, 255, 255, 0.16) 34%,
+    rgba(229, 235, 247, 0.36) 57%,
+    rgba(255, 255, 255, 0.76) 75%
+  );
+}
+
+.vidro::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow:
+    inset 0px -4px 12px 0px rgba(140, 148, 168, 0.24),
+    inset 0px 3px 8px 0px white;
+}
+
+.vidroConteudo {
+  position: relative;
+  z-index: 1;
+}
+
+.pilula {
+  border-radius: 999px;
+}
+
+.fundoAdmin {
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom,
+    var(--admin-fundo-1) 0%,
+    var(--admin-fundo-2) 45%,
+    var(--admin-fundo-3) 100%
+  );
+  color: var(--admin-texto);
+}
